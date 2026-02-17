@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .cards {
+            display: grid;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #007bff;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <div class="cards">
+            <div class="card">
+                <h2>Users</h2>
+                <div class="stat-number">1,234</div>
+                <p>Total active users this month</p>
+            </div>
+
+            <div class="card">
+                <h2>Revenue</h2>
+                <div class="stat-number">45,678</div>
+                <p>Total revenue earned</p>
+            </div>
+
+            <div class="card">
+                <h2>Growth</h2>
+                <div class="stat-number">+23%</div>
+                <p>Monthly growth rate</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dashboard. All rights reserved.</p>
+    </footer>
+</body>
+</html>
