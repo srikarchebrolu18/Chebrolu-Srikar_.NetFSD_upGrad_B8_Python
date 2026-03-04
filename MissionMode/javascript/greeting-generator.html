@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetings</title>
+</head>
+<body>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="generate()">Generate Greeting</button>
+    <p id="greetingoutput"></p>
+
+    <script>
+
+        function generate() {
+            let name = document.getElementById("nameInput").value;
+
+            displayGreeting(name);
+        }
+        
+        function displayGreeting(name) {
+            let message = "Hello, " + name + ":)";
+
+            document.getElementById("greetingoutput").innerText = message;
+        }
+
+    </script>
+</body>
+</html>

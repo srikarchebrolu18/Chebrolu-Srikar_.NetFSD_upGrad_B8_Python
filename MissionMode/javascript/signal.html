@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Light</title>
+    <style>
+        .box {
+            border: 5px solid black;
+            padding: 30px;
+            text-align: center;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text" name="signal-color" id="signalColorInput" placeholder="Enter signal color">
+        <button onclick="changeColor()">Change Signal</button>
+        <center><div id="signalLight"  style="width: 100px; height: 100px; background-color: grey; margin-top: 20px;"></div>
+        <p id="message"></p></center>
+        <script src="signal.js"></script>
+    </div>
+</body>
+</html>

@@ -40,9 +40,9 @@
     <h2>Register</h2>
     <img src="sap-icon.png" width="60px" alt="">
     <form action="NavMenu.html">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="tel" pattern="[0-9]{10}" placeholder="Phone Number" required>
+        <input type="text" id="fullname" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="tel" id="phone" pattern="[0-9]{10}" placeholder="Phone Number" required>
         <div class="gender">
         <label>Gender:</label>
         <label>
@@ -52,9 +52,9 @@
             <input type="radio" name="gender"> Female
         </label>
         </div>
-        <input type="age" min="18" max="40" placeholder="Age" required>
-        <input type="password" minlength="6" maxlength="12" placeholder="Password" required>
-        <button type="submit">Register</button>
+        <input type="age" min="18" max="40" id="age" placeholder="Age" required>
+        <input type="password" id="password" minlength="6" maxlength="12" placeholder="Password" required>
+        <button type="button" id="register">Register</button>
     <p>Already have an account? 
         <a href="login.html">Login</a>
     </p>

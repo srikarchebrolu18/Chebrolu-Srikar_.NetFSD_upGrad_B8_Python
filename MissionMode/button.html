@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Events Demo</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Event Examples</h2>
+    <button 
+        onclick="clickEve()" 
+        onmouseover="mouseOver()" 
+        onmouseout="mouseOut()">
+        Click Me
+    </button>
+
+    <br><br>
+
+    <input 
+        type="text" 
+        placeholder="Type something"
+        onkeydown="keyDown()"
+        onkeyup="keyUp()"
+        onchange="change()"
+>
+
+    <p id="message"></p>
+
+    <script>
+
+        function clickEve() {
+            document.getElementById("message").innerHTML = "Button clicked";
+        }
+
+        function mouseOver() {
+            document.getElementById("message").innerHTML = "Mouse over the button";
+        }
+
+        function mouseOut() {
+            document.getElementById("message").innerHTML = "Mouse left the button!";
+        }
+
+        function keyDown() {
+            document.getElementById("message").innerHTML = "Key is pressed";
+        }
+
+        function keyUp() {
+            document.getElementById("message").innerHTML = "Key is released";
+        }
+
+        function change() {
+            document.getElementById("message").innerHTML = "Input changed";
+        }
+
+    </script>
+
+</body>
+</html>

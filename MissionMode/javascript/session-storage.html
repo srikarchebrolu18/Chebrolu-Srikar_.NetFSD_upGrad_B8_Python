@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+        body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: gray;
+    }
+
+    .form-box {
+        width: 300px;
+        padding: 20px;
+        background: white;
+        border: 5px solid black;
+        border-radius: 5px;
+    }
+
+    input {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 5px;
+        margin-top: 15px;
+    }
+
+    p {
+        color: red;
+        font-size: 13px;
+        margin: 3px 0 0 0;
+        height: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 15px;
+    }
+    h2 {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div class="form-box">
+        <h2>Registration Form</h2>
+        <input type="text" id="name" placeholder="Enter your name" onchange="validateName()">
+        <p id="nameError"></p>
+
+        <input type="email" id="email" placeholder="Enter your email" onchange="validateEmail()">
+        <p id="emailError"></p>
+
+        <input type="number" id="age" placeholder="Enter your age" onchange="validateAge()">
+        <p id="ageError"></p>
+
+        <button onclick="submitForm()">Submit</button>
+    </div>
+
+    <script>
+        function validateName(){
+            let name = document.getElementById("name").value;
+            if(name.trim() === ""){
+                document.getElementById("nameError").innerHTML = "Name is required";
+            }
+            else{
+                document.getElementById("nameError").innerHTML = "";
+            }
+
+        }
+        function validateEmail(){
+            let email = document.getElementById("email").value;
+            if(email.trim() === ""){
+                document.getElementById("emailError").innerHTML = "Email is required";
+            }
+            else if(!email.includes("@")){
+                document.getElementById("emailError").innerHTML = "Invalid email format";
+            }
+            else{
+                document.getElementById("emailError").innerHTML = "";
+            }
+        }
+        function validateAge(){
+            let age = document.getElementById("age").value;
+            if(age.trim() === ""){
+                document.getElementById("ageError").innerHTML = "Age is required";
+            }
+            else if(Number(age) > 18 ){
+                document.getElementById("ageError").innerHTML = "";
+            }
+            else{
+                document.getElementById("ageError").innerHTML = "Age must be above 18";
+            }
+
+        }
+        function submitForm(){
+            validateName();
+            validateEmail();
+            validateAge();
+            let nameError = document.getElementById("nameError").innerHTML;
+            let emailError = document.getElementById("emailError").innerHTML;
+            let ageError = document.getElementById("ageError").innerHTML;
+
+            if(nameError === "" && emailError === "" && ageError === ""){
+                 let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                let age = document.getElementById("age").value;
+
+                sessionStorage.setItem("name", name);
+                sessionStorage.setItem("email", email);
+                sessionStorage.setItem("age", age);
+
+                alert("Form submitted successfully and data stored in sessionStorage");
+            }
+            else{
+                alert("Please fix the errors before submitting the form");
+            }
+        }
+    </script>
+
+</body>
+</html>

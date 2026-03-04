@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            border: 20px solid skyblue;
+            padding: 30px;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 8px 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-box">
+    <h2>Login</h2>
+    <img src="sap-icon.png" width="60px" alt="">
+    <form>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" minlength="6" maxlength="12" placeholder="Password" required>
+        <p id="error-text" style="color: red;"></p>
+        <button id="submit" type="button">Login</button>
+    </form>
+
+    <p>Don't have an account? 
+        <a href="register.html">Register</a>
+    </p>
+</div>
+<script src="login.js"></script>
+</body>
+</html>

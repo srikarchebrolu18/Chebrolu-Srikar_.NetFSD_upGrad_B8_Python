@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+
+   <style>
+    body {
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    textarea {
+        width: 100%;
+        height: 120px;
+        padding: 20px;
+        border: 5px solid black;
+        resize: none;
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 8px 8px;
+        margin: 15px;
+        font-weight: bold;
+    }
+</style>
+
+</head>
+<body>
+    <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Write your notes here..."></textarea>
+    <button  onclick="saveNote()">Save Notes</button>
+    <button  onclick="clearNote()">Clear Notes</button>
+
+    <script>
+        function saveNote() {
+           let note = document.getElementById("notes").value;
+           localStorage.setItem("note", note);
+           alert("Note saved");
+        }
+        function clearNote() {
+            localStorage.removeItem("note");
+            document.getElementById("notes").value = "";
+            alert("Note cleared");
+        }
+        function loadNote() {
+            let savedNote = localStorage.getItem("note");
+            if (savedNote) {
+                document.getElementById("notes").value = savedNote;
+            }
+            else {
+                document.getElementById("notes").value = "";
+            }
+        }
+        loadNote();
+
+    </script>
+</body>
+</html>

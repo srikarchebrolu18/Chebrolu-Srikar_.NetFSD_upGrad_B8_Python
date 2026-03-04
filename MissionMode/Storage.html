@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropdown Storage Task</title>
+
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        select {
+            padding: 8px;
+            margin: 10px;
+            width: 200px;
+        }
+
+        .container {
+            border: 2px solid black;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Select City</h2>
+        <select id="city">
+            <option value="">--Select City--</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Ponnur">Ponnur</option>
+            <option value="Guntur">Guntur</option>
+        </select>
+
+        <h2>Select Color</h2>
+        <select id="color">
+            <option value="">--Select Color--</option>
+            <option value="Yellow">Yellow</option>
+            <option value="SkyBlue">SkyBlue</option>
+            <option value="Green">Green</option>
+        </select>
+    </div>
+
+    <script>
+        document.getElementById("city").onchange = function () {
+            var selectedCity = this.value;
+            localStorage.setItem("city", selectedCity);
+            alert("City Stored: " + selectedCity);
+        };
+
+        document.getElementById("color").onchange = function () {
+            var selectedColor = this.value;
+            localStorage.setItem("color", selectedColor);
+            alert("Color Stored: " + selectedColor);
+        };
+    </script>
+
+</body>
+</html>
